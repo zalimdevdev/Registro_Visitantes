@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "ContarPaises";
+}
+
+@if (ViewBag.ContadorPaises != null)
+{
+    <h3>Resultado del Conteo</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>País</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var pais in ViewBag.ContadorPaises)
+        {
+            <tr>
+                <td>@pais.Key</td>
+                <td>@pais.Value</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

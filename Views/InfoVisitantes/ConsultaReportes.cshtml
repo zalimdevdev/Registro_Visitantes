@@ -1,0 +1,126 @@
+@{
+    ViewData["Title"] = "Consultar Conteo del dia";
+}
+<h1>@ViewData["Title"]</h1>
+<h2>Seleccionar Fecha para los Reportes</h2>
+<form asp-action="ConsultaReportes" method="post">
+    <div class="form-group">
+        <label for="fecha">Seleccione una fecha:</label>
+        <input type="date" id="fecha" name="fecha" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Generar Reportes</button>
+</form>
+
+<hr/>
+<!-- Resultados del conteo por Nacionalidad -->
+@if (ViewBag.TotalNacionales != null && ViewBag.TotalExtranjeros != null)
+{
+    <h3>Resultados del Conteo por Nacionalidad</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nacionalidad</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.TotalNacionales > 0)
+            {
+                <tr>
+                    <td>Nacional</td>
+                    <td>@ViewBag.TotalNacionales</td>
+                </tr>
+            }
+            @if (ViewBag.TotalExtranjeros > 0)
+            {
+                <tr>
+                    <td>Extranjero</td>
+                    <td>@ViewBag.TotalExtranjeros</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<hr />
+<!-- Resultados del conteo por País de Origen -->
+@if (ViewBag.TotalEstadosUnidos != null && ViewBag.TotalNicaragua != null && ViewBag.TotalBenin != null && ViewBag.TotalEspana != null && ViewBag.TotalAfganistán != null && ViewBag.TotalAlbania != null && ViewBag.TotalAlemania != null && @ViewBag.TotalAntiguaYBarbuda && ViewBag.TotalAndorra != null && ViewBag.TotalAngola != null && ViewBag.TotalArabiaSaudita != null && ViewBag.TotalArgelia != null )
+{
+    <h3>Resultados del Conteo por País de Origen</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>País de Origen</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.TotalEstadosUnidos > 0)
+            {
+                <tr>
+                    <td>Estados Unidos</td>
+                    <td>@ViewBag.TotalEstadosUnidos</td>
+                </tr>
+            }
+            @if (ViewBag.TotalNicaragua > 0)
+            {
+                <tr>
+                    <td>Nicaragua</td>
+                    <td>@ViewBag.TotalNicaragua</td>
+                </tr>
+            }
+            @if (ViewBag.TotalBenin > 0)
+            {
+                <tr>
+                    <td>Benín</td>
+                    <td>@ViewBag.TotalBenin</td>
+                </tr>
+            }
+            @if (ViewBag.TotalEspana > 0)
+            {
+                <tr>
+                    <td>España</td>
+                    <td>@ViewBag.TotalEspaña</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@*
+
+@if (ViewBag.TotalesPorPais != null)
+{
+    var totalesPorPais = (Dictionary<string, int>)ViewBag.TotalesPorPais;
+    if (totalesPorPais.Any(p => p.Value > 0)) // Verifica si hay algún país con valor mayor a 0
+    {
+        <h3>Resultados del Conteo por País de Origen</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>País de Origen</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var pais in totalesPorPais.Where(p => p.Value >= 0)) // Solo muestra los países con valores > 0
+                {
+                    <tr>
+                        <td>@pais.Key</td>
+                        <td>@pais.Value</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+          }
+    else
+    {
+        <p>No hay resultados disponibles.</p>
+    }
+}
+else
+{
+    <p>No se encontraron datos de conteo por país.</p>
+}
+
+*@
