@@ -25,8 +25,6 @@ namespace RegistroVisitantes.Controllers
             return View(await _context.InfoVisitantes.ToListAsync());
         }
 
-
-
 [HttpGet]
 public IActionResult ConsultaReportes()
 {
@@ -47,7 +45,7 @@ public IActionResult ConsultaReportes(DateTime fecha)
             
             ViewBag.VisitantesDelDia = visitantesDelDia;
             
-
+            
             // Conteo de nacionales y extranjeros
             var totalNacionales = visitantesDelDia
                 .Where(v => v.Nacionalidad == "Nacional")
@@ -63,7 +61,7 @@ public IActionResult ConsultaReportes(DateTime fecha)
 
             // Conteo por país de origen
             var conteoPorPais = visitantesDelDia
-                .Where(v => v.Nacionalidad == "Extranjero" && !string.IsNullOrEmpty(v.PaisDeOrigen))
+                .Where(v =>   v.Nacionalidad == "Extranjero" && !string.IsNullOrEmpty(v.PaisDeOrigen))
                 .GroupBy(v => v.PaisDeOrigen)
                 .Select(group => new
                 {
@@ -72,10 +70,30 @@ public IActionResult ConsultaReportes(DateTime fecha)
                 })
                 .ToDictionary(g => g.Pais, g => g.Total);
 
+            //Conteo de genero
+
+            var totalFemenino = visitantesDelDia
+                .Where(v => v.Sexo == "Femenino")
+                .Select(v => v.Identificacion)
+                .Distinct()
+                .Count();
+
+
+               var totalMasculino = visitantesDelDia
+                .Where(v => v.Sexo == "Masculino")
+                .Select(v => v.Identificacion)
+                .Distinct()
+                .Count();
+
+
             // Pasar los datos a la vista
             ViewBag.TotalNacionales = totalNacionales;
             ViewBag.TotalExtranjeros = totalExtranjeros;
             ViewBag.ConteoPorPais = conteoPorPais;
+            ViewBag.TotalMasculino = totalMasculino;
+            ViewBag.TotalFemenino = totalFemenino;
+
+
             ViewBag.ReporteGenerado = true;
 
 
