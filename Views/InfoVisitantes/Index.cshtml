@@ -3,13 +3,19 @@
 @{
     ViewData["Title"] = "Index";
 }
+<div class="cardpen shadow">
+
 
 <h1>Registro de Visitantes </h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+
+   <a asp-action="Create" class="btn btn-neoB"> Agregar <img width="40" height="40" src="~/imgs/addvisitante.png" ></a>
+    
 </p>
-<table class="table">
+<div class="table-responsive fondo">
+    <br>
+<table class="table table-borderless">
     <thead>
         <tr>
             <th>
@@ -22,7 +28,10 @@
                 @Html.DisplayNameFor(model => model.Sexo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EdadVisitantes)
+
+                @*Html.DisplayNameFor(model => model.EdadVisitantes)*@
+                Edad
+            
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Identificacion)
@@ -45,6 +54,7 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+                  
             <td>
                 @Html.DisplayFor(modelItem => item.Fecha)
             </td>
@@ -72,16 +82,28 @@
             <td>
                 @Html.DisplayFor(modelItem => item.PaisDeOrigen)
             </td>
+
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                
+<div class="btn-group">
+               @* <button type="button" class="btn btn-neoc"><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></button>*@
+            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-neoBr ">  Editar </a>
+            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-neoBc "> Detalles</a>
+            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-neoBl ">Delete</a>
+   
+</div> 
             </td>
+     
         </tr>
+
 }
     </tbody>
-</table>
 
+</table>
+<br>
+</div>
+
+</div>
 
 
 

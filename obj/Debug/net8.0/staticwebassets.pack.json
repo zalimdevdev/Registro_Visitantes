@@ -5,12 +5,32 @@
       "PackagePath": "staticwebassets\\RegistroVisitantes.bundle.scp.css"
     },
     {
+      "Id": "D:\\Zalim Cursos\\Zalim Unan 2025\\Registro_Visitantes\\RegistroVisitantes\\wwwroot\\addvisitante.png",
+      "PackagePath": "staticwebassets\\addvisitante.png"
+    },
+    {
       "Id": "D:\\Zalim Cursos\\Zalim Unan 2025\\Registro_Visitantes\\RegistroVisitantes\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "D:\\Zalim Cursos\\Zalim Unan 2025\\Registro_Visitantes\\RegistroVisitantes\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Zalim Cursos\\Zalim Unan 2025\\Registro_Visitantes\\RegistroVisitantes\\wwwroot\\imgs\\Deletereg.png",
+      "PackagePath": "staticwebassets\\imgs\\Deletereg.png"
+    },
+    {
+      "Id": "D:\\Zalim Cursos\\Zalim Unan 2025\\Registro_Visitantes\\RegistroVisitantes\\wwwroot\\imgs\\Editreg.png",
+      "PackagePath": "staticwebassets\\imgs\\Editreg.png"
+    },
+    {
+      "Id": "D:\\Zalim Cursos\\Zalim Unan 2025\\Registro_Visitantes\\RegistroVisitantes\\wwwroot\\imgs\\addvisitante.png",
+      "PackagePath": "staticwebassets\\imgs\\addvisitante.png"
+    },
+    {
+      "Id": "D:\\Zalim Cursos\\Zalim Unan 2025\\Registro_Visitantes\\RegistroVisitantes\\wwwroot\\imgs\\detailsss.png",
+      "PackagePath": "staticwebassets\\imgs\\detailsss.png"
     },
     {
       "Id": "D:\\Zalim Cursos\\Zalim Unan 2025\\Registro_Visitantes\\RegistroVisitantes\\wwwroot\\js\\site.js",

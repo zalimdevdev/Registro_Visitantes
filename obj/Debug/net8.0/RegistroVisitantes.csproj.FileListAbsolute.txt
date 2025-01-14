@@ -562,3 +562,4 @@ D:\Zalim Cursos\Zalim Unan 2025\Registro_Visitantes\RegistroVisitantes\obj\Debug
 D:\Zalim Cursos\Zalim Unan 2025\Registro_Visitantes\RegistroVisitantes\obj\Debug\net8.0\RegistroVisitantes.pdb
 D:\Zalim Cursos\Zalim Unan 2025\Registro_Visitantes\RegistroVisitantes\obj\Debug\net8.0\RegistroVisitantes.genruntimeconfig.cache
 D:\Zalim Cursos\Zalim Unan 2025\Registro_Visitantes\RegistroVisitantes\obj\Debug\net8.0\ref\RegistroVisitantes.dll
+D:\Zalim Cursos\Zalim Unan 2025\Registro_Visitantes\RegistroVisitantes\obj\Debug\net8.0\RegistroVisitantes.sourcelink.json

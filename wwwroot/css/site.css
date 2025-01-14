@@ -12,7 +12,63 @@ html {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
+.form-control{
+  border: none;
+  padding: 15px;
+  border-radius: 68px;
+  background: linear-gradient(225deg, #f1f5fe, #ffffff);
+  box-shadow:  -12px 12px 24px #f0f0f0,
+               12px -12px 24px #ffffff;
+  font-size: medium;
+  font-weight: bold;
+  width: 580px;
+  max-width: 650px;
+
+}
+
+.navbar{
+  border-radius: 0px;
+  background: #badcff;
+  box-shadow: inset 5px -5px 10px #d9d9d9,
+              inset -5px 5px 10px #ffffff;
+
+}
+
+.table{
+
+  min-width: 450;
+  padding: 50px;
+  border-radius: 19px;
+  background: #fcfdff;
+  box-shadow:  -5px -5px 10px #d9d9d9,
+               5px 5px 10px #ffffff;
+
+               
+
+}
+
+.tablecon{
+
+  padding: 8px;
+  border-radius: 90px;
+  background: #f9fbff;
+}
+
+.cardpen {
+  padding: 25px;
+  min-width: 1900;
+  border-radius: 45px;
+  background: #f1f5fe;
+  box-shadow:  -5px -5px 10px #d9d9d9,
+               5px 5px 10px #ffffff;
+               
+              }
+
+
+
 html {
+
+  
   position: relative;
   min-height: 100%;
 }
@@ -20,3 +76,68 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+.card {
+  padding: 25px;
+  width: 700px;
+  border-radius: 45px;
+  background: #f1f5fe;
+  box-shadow:  -5px -5px 10px #d9d9d9,
+               5px 5px 10px #ffffff;
+               
+              }
+
+
+
+.fondo{
+  padding: 25px;
+  background: #f1f5fe;
+
+}              
+
+
+.btn-neoc {
+  border-radius: 74px;
+  background: #ffffff;
+  box-shadow:  11px 11px 11px #f1f5fe,
+               -11px -11px 11px #ffffff; 
+}
+
+
+
+.btn-neoB {
+  border-radius: 50px;
+  background: linear-gradient(145deg, #dae9ff, #ffffff);
+  box-shadow:  10px 10px 20px #d1d1d1,
+               -10px -10px 20px #ffffff;
+}
+
+.btn-neoBr {
+  border-radius: 50px;
+  background: linear-gradient(145deg,#e9f1ff, #ffffff);
+
+              }
+
+.btn-neoBc {
+  border-radius: 50px;
+  background: linear-gradient(185deg, #f5f9ff, #ffffff);
+
+}
+
+.btn-neoBl {
+  border-radius: 50px;
+  background: linear-gradient(225deg, #e9f1ff, #ffffff);
+
+}
+
+
+.inputc {
+border-radius: 68px;
+background: linear-gradient(225deg, #e6e6e6, #ffffff);
+box-shadow:  -32px 32px 64px #d9d9d9,
+             32px -32px 64px #ffffff;
+              }
+
+              
+ 

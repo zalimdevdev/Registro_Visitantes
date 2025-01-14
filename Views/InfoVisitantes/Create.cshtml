@@ -3,15 +3,22 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+<div class="card shadow">
+<ul class="list-group list-group-flush">
+<li class="list-group-item fondo">
 <h1>Creacion de registro</h1>
 
 <h4>Informacion de los Visitantes</h4>
-<hr />
+
+
+</li>
+
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
                 <label asp-for="Fecha" class="control-label"></label>
                 <input asp-for="Fecha" class="form-control" />
@@ -76,7 +83,7 @@
                 <select asp-for="PaisDeOrigen" class="form-control" >
                     <option selected>Open this select menu</option>
 
-                        <option value="Afganistán">Afganistán</option>
+    <option value="Afganistán">Afganistán</option>
     <option value="Albania">Albania</option>
     <option value="Alemania">Alemania</option>
 <option value="Andorra">Andorra</option>
@@ -267,17 +274,36 @@
     <option value="Zimbabue">Zimbabue</option>
     <option value="Palestina">Palestina</option>
                  </select>
+
+
                 <span asp-validation-for="PaisDeOrigen" class="text-danger"></span>
-            </div>
+            </div>         
+</br>
+
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-neoc" />
             </div>
+
+
         </form>
     </div>
+
+
+
 </div>
 
+
+
+
+<li class="list-group-item fondo ">
+
+
 <div>
-    <a asp-action="Index">Back to List</a>
+
+  <button type="button" class="btn btn-neoc"> <a asp-action="Index"> Back to List</a> </button>
+</div>
+
+</li>
 </div>
 
 @section Scripts {

@@ -7,16 +7,17 @@
     <div class="form-group">
         <label for="fecha">Seleccione una fecha:</label>
         <input type="date" id="fecha" name="fecha" class="form-control" required />
+        <br>
     </div>
-    <button type="submit" class="btn btn-primary">Generar Reportes</button>
+    <button type="submit" class="btn btn-neoB">Generar Reportes</button>
 </form>
 
 <hr/>
-<!-- Resultados del conteo por Nacionalidad -->
-@if (ViewBag.TotalNacionales != null && ViewBag.TotalExtranjeros != null)
+
+@if (ViewBag.ReporteGenerado == true)
 {
     <h3>Resultados del Conteo por Nacionalidad</h3>
-    <table class="table table-bordered">
+    <table class="table table-borderless">
         <thead>
             <tr>
                 <th>Nacionalidad</th>
@@ -24,29 +25,19 @@
             </tr>
         </thead>
         <tbody>
-            @if (ViewBag.TotalNacionales > 0)
-            {
-                <tr>
-                    <td>Nacional</td>
-                    <td>@ViewBag.TotalNacionales</td>
-                </tr>
-            }
-            @if (ViewBag.TotalExtranjeros > 0)
-            {
-                <tr>
-                    <td>Extranjero</td>
-                    <td>@ViewBag.TotalExtranjeros</td>
-                </tr>
-            }
+            <tr>
+                <td>Nacional</td>
+                <td>@ViewBag.TotalNacionales</td>
+            </tr>
+            <tr>
+                <td>Extranjero</td>
+                <td>@ViewBag.TotalExtranjeros</td>
+            </tr>
         </tbody>
     </table>
-}
-<hr />
-<!-- Resultados del conteo por País de Origen -->
-@if (ViewBag.TotalEstadosUnidos != null && ViewBag.TotalNicaragua != null && ViewBag.TotalBenin != null && ViewBag.TotalEspana != null && ViewBag.TotalAfganistán != null && ViewBag.TotalAlbania != null && ViewBag.TotalAlemania != null && @ViewBag.TotalAntiguaYBarbuda && ViewBag.TotalAndorra != null && ViewBag.TotalAngola != null && ViewBag.TotalArabiaSaudita != null && ViewBag.TotalArgelia != null )
-{
+
     <h3>Resultados del Conteo por País de Origen</h3>
-    <table class="table table-bordered">
+    <table class="table table-borderless">
         <thead>
             <tr>
                 <th>País de Origen</th>
@@ -54,37 +45,61 @@
             </tr>
         </thead>
         <tbody>
-            @if (ViewBag.TotalEstadosUnidos > 0)
+            @foreach (var item in ViewBag.ConteoPorPais as Dictionary<string, int>)
             {
                 <tr>
-                    <td>Estados Unidos</td>
-                    <td>@ViewBag.TotalEstadosUnidos</td>
+                    <td>@item.Key</td>
+                    <td>@item.Value</td>
                 </tr>
             }
-            @if (ViewBag.TotalNicaragua > 0)
+        </tbody>
+    </table>
+    <hr>
+<h1>Registros del Dia </h1>
+
+@if (ViewBag.VisitantesDelDia != null && ViewBag.VisitantesDelDia.Count > 0)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Identificación</th>
+                <th>Sexo</th>
+                <th>Edad</th>
+                <th>País de Origen</th>
+                <th>Nacionalidad</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var visitante in ViewBag.VisitantesDelDia)
             {
                 <tr>
-                    <td>Nicaragua</td>
-                    <td>@ViewBag.TotalNicaragua</td>
-                </tr>
-            }
-            @if (ViewBag.TotalBenin > 0)
-            {
-                <tr>
-                    <td>Benín</td>
-                    <td>@ViewBag.TotalBenin</td>
-                </tr>
-            }
-            @if (ViewBag.TotalEspana > 0)
-            {
-                <tr>
-                    <td>España</td>
-                    <td>@ViewBag.TotalEspaña</td>
+                    <td>@visitante.Nombre</td>
+                    <td>@visitante.Identificacion</td>
+                    <td>@visitante.Sexo</td>
+                    <td>@visitante.EdadVisitantes</td>
+                    <td>@visitante.PaisDeOrigen</td>
+                    <td>@visitante.Nacionalidad</td>
+                    <td>@visitante.Fecha?.ToString("yyyy-MM-dd")</td>
                 </tr>
             }
         </tbody>
     </table>
 }
+else
+{
+    <p>No hay registros para la fecha seleccionada.</p>
+}
+
+
+}
+
+
+
+
+
+
 
 
 @*
